@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8">
+<script src="https://p.trellocdn.com/power-up.min.js"></script>
+<script>
+  TrelloPowerUp.initialize({
+    'list-actions': () => [
+      {
+        text: 'Copy as text',
+        callback: async (t) => {
+          const list = await t.list('id', 'name');
+          const cards = await t.cards('name', 'idList', 'pos');
+          const text = cards
+            .filter((c) => c.idList === list.id)
+            .sort((a, b) => a.pos - b.pos)
+            .map((c) => c.name)
+            .join('\n');
+          return t.popup({ title: list.name, url: './popup.html', args: { text }, height: 220 });
+        },
+      },
+    ],
+  });
+</script>

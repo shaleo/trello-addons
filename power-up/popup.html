@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
+<style>
+  textarea { width: 100%; height: 150px; box-sizing: border-box; font: inherit; resize: none; }
+</style>
+<textarea id="out" readonly></textarea>
+<button id="copy" class="mod-primary">Copy to clipboard</button>
+<script src="https://p.trellocdn.com/power-up.min.js"></script>
+<script>
+  const t = TrelloPowerUp.iframe();
+  const out = document.getElementById('out');
+  const btn = document.getElementById('copy');
+  out.value = t.arg('text');
+
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(out.value);
+    } catch {
+      out.select();
+      document.execCommand('copy');
+    }
+    btn.textContent = 'Copied';
+    setTimeout(() => t.closePopup(), 600);
+  });
+
+  t.render(() => t.sizeTo('body'));
+</script>
