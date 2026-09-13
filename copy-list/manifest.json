@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Trello: Copy List as Text",
+  "version": "1.0",
+  "description": "Adds a copy button to every Trello list that copies its card titles to the clipboard as plain text.",
+  "content_scripts": [
+    {
+      "matches": ["https://trello.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ]
+}
