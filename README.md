@@ -14,7 +14,7 @@ Trello Power-Up that adds **Copy as text** to every list's menu (works in the br
 
 Setup:
 
-1. Host this repo over HTTPS, e.g. GitHub Pages (Settings → Pages → deploy `master` from root). The connector URL is then `https://<user>.github.io/trello-addons/power-up/`.
-2. Go to <https://trello.com/power-ups/admin> → **New** → set the name, workspace, and iframe connector URL from step 1. Use `.../power-up/icon.svg` as the icon URL.
+1. Hosted on GitHub Pages from `master`. Connector URL: `https://shaleo.github.io/trello-addons/power-up/`
+2. Go to <https://trello.com/power-ups/admin> → **New** → set the name, workspace, and iframe connector URL from step 1. Icon URL: `https://shaleo.github.io/trello-addons/power-up/icon.svg`.
 3. In the Power-Up's **Capabilities** tab enable **List actions**.
 4. On a board: Power-Ups → Custom → add it.
